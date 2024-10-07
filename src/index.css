@@ -9,6 +9,9 @@
 body {
     background-color: #ffffff;
 }
+html{
+    overflow-x: hidden;
+}
 .open-sidebar{
     display:none;
 }
@@ -150,7 +153,7 @@ body {
         gap: 0;
     }
     .home-content {
-        margin-left: 8%;
+        margin-left: 6%;
     }
     .Sidebar{
         display: none;
