@@ -1,15 +1,13 @@
 import React from "react";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoIosNotificationsOutline } from "react-icons/io";
-import { IoMenuOutline } from "react-icons/io5";
 
 
-const Navbar = () => {
+
+const Navbar = ({hideSidebar}) => {
   return (
     <div className="home-nav-container  w-full">
-      <span className="open-sidebar">
-        <IoMenuOutline/>
-      </span>
+     
       <ul className="flex w-full justify-between items-center">
         <div className="nav-search w-full">
           <input

@@ -78,7 +78,9 @@ html{
 .Sidebar ul.language-list div:hover span.name {
     font-weight: bold;
 }
-
+.Sidebar .close-sidebar {
+    display: none;
+}
 .home-content{
     margin-left: 20%;
 }
@@ -157,6 +159,18 @@ html{
     }
     .Sidebar{
         display: none;
+    }
+    .Sidebar.open {
+        display: block;
+    }
+    .Sidebar .top-logo {
+        margin-right: 10px;
+    }
+    .Sidebar .close-sidebar {
+        font-size: 30px;
+        margin-left: 70px;
+        float: left;
+        display: block;
     }
     .posts{
         grid-template-columns: repeat(1, .15fr);
