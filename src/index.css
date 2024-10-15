@@ -183,7 +183,8 @@ html{
         display: none;
     }
     .home-nav-container .nav-icons{
-        display: none;
+        gap: 9px;
+        margin-right: 12px;
     }
     .open-sidebar{
         display: block;

@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 import { CiSearch } from "react-icons/ci";
 import progrommingData from "../utils/progrommingList";
 import { FaTimes } from "react-icons/fa";
-const SideBar = ({ closeSidebar }) => {
+const SideBar = ({ closeSidebar, onSelectLanguage }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const filteredData = progrommingData.filter((item) =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -40,12 +40,15 @@ const SideBar = ({ closeSidebar }) => {
           height: '450px'
         }}
       >
-        {filteredData.map((items) => (
-          <div className="flex items-center gap-2 mt-5">
+        {filteredData.map((languages) => (
+          <div className="flex languages-center gap-2 mt-5"  key={languages.id} onClick={() => {
+            console.log('Clicked Language:', languages)
+            onSelectLanguage(languages);
+          }}>
             <span className="icon text-lg">
-              <items.icon />
+              <languages.icon />
             </span>
-            <span className="name">{items.name}</span>
+            <span className="name">{languages.name}</span>
           </div>
         ))}
       </ul>

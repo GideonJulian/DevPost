@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineMore } from "react-icons/ai";
 import { CiBookmark } from "react-icons/ci";
 import { BiCommentDots } from "react-icons/bi";
-const PostCard = ({ imgSrc, desc, usrename, datePosted, profileImg }) => {
+const PostCard = ({ imgSrc, desc, usrename, datePosted, profileImg, tags}) => {
   return (
     <div className="post-card border border-input hover:shadow shadow-black-700">
       <div className="top-row flex justify-between">
@@ -22,15 +22,14 @@ const PostCard = ({ imgSrc, desc, usrename, datePosted, profileImg }) => {
         </div>
       </div>
       <div className="tags-list mt-2">
-        <span className="text-sm px-3 py-1 bg-white ml-2 rounded">
-          #HTML
+        {
+          tags.map((tag)=> (
+            <span className="text-sm px-3 py-1 bg-white ml-2 rounded">
+              #{tag}
         </span>
-        <span className="text-sm px-3 py-1 bg-white ml-2 rounded">
-          #JS
-        </span>
-        <span className="text-sm px-3 py-1 bg-white ml-2 rounded">
-          #NODEJS
-        </span>
+          ))
+        }
+      
       </div>
       <div className="middle-row w-full bg-white rounded rounded-lg border border-input py-2 px-4 mt-3">
         <h4 className="post-date  font-bold text-main-blue mb-3">{datePosted}</h4>
