@@ -9,6 +9,9 @@
 body {
   background-color: #f5f5f5;
 }
+html {
+  overflow-x: hidden;
+}
 .nav-container {
   box-shadow: 0 0 0.5rem #00000034;
   width: 100%;
