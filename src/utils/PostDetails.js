@@ -6,8 +6,6 @@ import userimg2 from '../assets/images/userimg2.png'
 import userimg3 from '../assets/images/userimg3.png'
 
 
-
-
 const PostDetails = [
   {
     id: 1,
@@ -41,6 +39,28 @@ const PostDetails = [
     screenShort: errorImg3,
     tags: ["JAVASCRIPT", "JAVA", "PYTHON"],
     language: 'css'
+  },
+  {
+    id:3 ,
+    erroTitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, ad? Asperiores, impedit.",
+    username: "Community picks",
+    userProfile: userimg3,
+    postDate: "Jan 01",
+    screenShort: errorImg3,
+    tags: ["JAVASCRIPT", "JAVA", "PYTHON"],
+    language: 'css'
+  },
+  {
+    id: 4 ,
+    erroTitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.  ad? Asperiores, impedit.",
+    username: "Fullstack Developer",
+    userProfile: userimg2,
+    postDate: "Oct 01",
+    screenShort: errorImg2,
+    tags: ["JAVASCRIPT", "JAVA", "PYTHON"],
+    // language: 'javascript'
   },
   {
     id: 4 ,

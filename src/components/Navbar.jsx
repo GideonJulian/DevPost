@@ -1,34 +1,42 @@
 import React from "react";
-import { MdOutlineEmail } from "react-icons/md";
-import { IoIosNotificationsOutline } from "react-icons/io";
-
-
-
-const Navbar = ({hideSidebar}) => {
+import logo from "../assets/logo.png";
+import { FaBars, FaSearch } from "react-icons/fa";
+const Navbar = ({ showMobileSearch }) => {
   return (
-    <div className="home-nav-container  w-full">
-     
-      <ul className="flex w-full justify-between items-center">
-        <div className="nav-search w-full">
-          <input
-            type="text"
-            placeholder="Search solution/error"
-            className="h-10 px-4 py-5 w-full"
-          />
-        </div>
-        <div className="nav-icons mr-10 flex items-center gap-5">
-          <div className="mail-icon border border-input px-2 py-2 rounded-full">
-            <MdOutlineEmail />
+    <div className="nav-container w-full bg-white px-6 py-3 h10">
+      <div className="container flex items-center ">
+        <div className="flex justify-berween w-full">
+          <div className="logo flex items-center ">
+            <div>
+              <span className="bars">
+                <FaBars />
+              </span>
+            </div>
+            <div>
+              <img src={logo} alt="" />
+              <h3>
+                Dev<span>Post</span>
+              </h3>
+            </div>
           </div>
-          <div className="mail-icon border border-input px-2 py-2 rounded-full">
-            <IoIosNotificationsOutline  />
+          <div className="nav-search">
+            <input
+              type="text"
+              placeholder="Search error/solution..."
+              className=""
+            />
           </div>
         </div>
-        <div className="flex nav-button mr-5 gap-2 items-center">
-          <button type="button" className="login font-medium">Login</button>
-          <button type="button" className="signup font-medium">Signup</button>
+        <div className="mobile-searchIcon">
+          <span className="" onClick={showMobileSearch}>
+            <FaSearch />
+          </span>
         </div>
-      </ul>
+        <div className="nav-btns flex items-center">
+          <button className="login font-medium ">Login</button>
+          <button className="signup">Create account</button>
+        </div>
+      </div>
     </div>
   );
 };

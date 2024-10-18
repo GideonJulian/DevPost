@@ -1,55 +1,76 @@
 import React from "react";
-import { AiOutlineMore } from "react-icons/ai";
-import { CiBookmark } from "react-icons/ci";
-import { BiCommentDots } from "react-icons/bi";
-const PostCard = ({ imgSrc, desc, usrename, datePosted, profileImg, tags}) => {
+import { CiBookmarkCheck } from "react-icons/ci";
+import { IoMdMore } from "react-icons/io";
+
+const PostCard = ({
+  postTitle,
+  userName,
+  postDate,
+  postImg,
+  tags,
+  userPics,
+}) => {
+  const backgroundColors = [
+    "#e7c6ff", // Red-Orange
+    "#33FF57", // Green
+    "#ffafcc", // Blue
+    "#FF33A1", // Pink
+    "#ffd6ff", // Gold
+    "#faedcd", // Coral
+    "#33FFFF",
+   // Cyan
+   "#4cc9f0",
+   '#ade8f4',
+   '#e7c6ff',
+   "#76c893"
+  ];
+  const randomColor =
+    backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+
+  const postStyle = {
+    backgroundColor: randomColor,
+    padding: "10px",
+    borderRadius: "10px",
+
+    // color: "#fff", // For better readability on dark backgrounds
+  };
+
   return (
-    <div className="post-card border border-input hover:shadow shadow-black-700">
-      <div className="top-row flex justify-between">
-        <div className="profile flex items-center gap-2">
-          <img src={profileImg} alt="" />
-          <div>
-            <span className="username cursor-pointer">{usrename}</span>
+    <div className="post-card bg-white rounded rounded-lg w-full">
+      <div className="inner" style={postStyle}>
+        <div className="top-row flex items-center justify-between ">
+          <div className="profile flex items-center gap-2">
+            <img src={userPics} alt="" />
+            <h3>{userName}</h3>
           </div>
-        </div>
-        <div className="flex items-center">
-          <span className="text-lg font-bold cursor-pointer">
-            <CiBookmark />
-          </span>
-          <span className="text-lg font-bold cursor-pointer">
-            <AiOutlineMore />
-          </span>
-        </div>
-      </div>
-      <div className="tags-list mt-2">
-        {
-          tags.map((tag)=> (
-            <span className="text-sm px-3 py-1 bg-white ml-2 rounded">
-              #{tag}
-        </span>
-          ))
-        }
-      
-      </div>
-      <div className="middle-row w-full bg-white rounded rounded-lg border border-input py-2 px-4 mt-3">
-        <h4 className="post-date  font-bold text-main-blue mb-3">{datePosted}</h4>
-        <h3 className="title font-md text-sm">{desc}</h3>
-        <div className="img-card w-full">
-          <img src={imgSrc} alt="error-img" className="solution-img  w-full" />
-        </div>
-        <div className="bottom-row border-t py-1 mt-5  flex items-center justify-between">
-          <div className="comment px-2 py-1 bg-light-gray  flex items-center gap-1 rounded rounded-lg " onClick={''}>
-            <span className="font-md text-lg">
-              <BiCommentDots />
+          <div className="flex items-center ">
+            <span className="font-medium">
+              <CiBookmarkCheck />
             </span>
-            <p className="font-md text-lg">4</p>
+            <span className="font-medium">
+              <IoMdMore />
+            </span>
           </div>
-         
-          <div>
-          <button type="button" className="px-4 py-2 rounded rounded-lg bg-main-blue text-white font-md">Solution</button>
         </div>
+        <div className="tag-row mt-1">
+          {tags?.map((tag, index) => (
+            <span
+              key={index}
+              className="tag-box px-1 py-1 border border-lg rounded-lg text-sm font-medium ml-2 text-black font-medium "
+            >
+              #{tag}
+            </span>
+          ))}
         </div>
-       
+        <div className="ml-3 mt-3">
+          <h3 className="font-medium text-sm">{postTitle}</h3>
+        </div>
+        <div>
+          <img src={postImg} alt="" className="post-screenshot" />
+        </div>
+      </div>
+      <div className="bottom">
+
       </div>
     </div>
   );
