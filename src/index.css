@@ -138,7 +138,9 @@ body {
   .nav-container .nav-btns .login {
     display: none;
   }
-
+  .nav-container .nav-btns .signup {
+    display: none;
+  }
   .mobile-searchIcon span {
     font-size: 20px;
     margin-right: 10px;
@@ -163,7 +165,7 @@ body {
     grid-template-columns: repeat(1, 0.15fr);
     place-content: center;
     margin-top: 20%;
-    margin-left: 30px;
+    margin-left: 10px;
   }
   .post-card {
     width: 340px;
