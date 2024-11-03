@@ -2,12 +2,12 @@ import React from "react";
 import logo from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 import { IoIosNotificationsOutline } from "react-icons/io";
-
+import { CiSearch } from "react-icons/ci";
 import { FaUserCircle } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
 const Navbar = ({toggleSidebar}) => {
   return (
-    <div className="navbar-container p-4 flex items-center justify-around ">
+    <div className=" navbar-container p-4 flex  bg-black items-center justify-around w-full fixed  mb-10 top-0 ">
       <div className="text-white text-2xl" onClick={toggleSidebar}>
         <FaBars />  
       </div>
@@ -25,7 +25,13 @@ const Navbar = ({toggleSidebar}) => {
           <FaSearch />
         </button>
       </div>
+    
       <div className="flex gap-2">
+{/* 
+        <span className="mobile-search text-white text-2xl">
+          <CiSearch /> 
+        </span> */}
+     
         <button className="font-semibold text-white text-3xl ">
           <IoIosNotificationsOutline />
         </button>
