@@ -1,0 +1,44 @@
+   {/* <div className="side-search">
+          <input
+            value={searchQuery}
+            type="text"
+            className=" px-3 py-2 h-10 border rounded rounded-lg mt-4"
+            placeholder="Search "
+            onChange={handleSearchlanguage}
+          />
+        </div>
+        <ul
+          className="ml-2 mt-5 language-list px-5"
+          style={{
+            height: "350px",
+            overflowY: "auto",
+          }}
+        >
+          {filteredLanguages.map((items) => {
+            return (
+              <div className="flex items-center gap-2 cursor-pointer mt-2 px-2 py-3 ">
+                <span>
+                  <items.icon />
+                </span>
+                <span>{items.name}</span>
+              </div>
+            );
+          })}
+        </ul> */}
+        {/* <div className="saved-solution ">
+          <div className="mt-3 px-3 py-2 h-10 bg-gray w-full flex items-center gap-2 saved-sol-btn">
+            <span className="font-medium ">Saved solution</span>
+            <span className="text-main-blue text-lg text-bold ">
+              <BsFillBookmarkStarFill />
+            </span>
+          </div>
+          <ul>
+            <p className="text-sm font-medium font-italic">You need to register to access your saved solutions.</p>
+          </ul>
+        </div> */}
+
+
+        
+        <div className="text-white px-6 py-2 rounded-sm bg-hover w-72 text-sm whitespace-nowrap  text-ellipsis">
+          {tag}
+        </div>

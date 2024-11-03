@@ -7,170 +7,52 @@
   padding: 0;
 }
 body {
-  background-color: #f5f5f5;
+  background-color: #000000;
 }
 html {
   overflow-x: hidden;
 }
-.nav-container {
-  box-shadow: 0 0 0.5rem #00000034;
-  width: 100%;
-  position: fixed;
-}
-.nav-container .container {
-  max-width: 1444px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.nav-container .logo h3 {
-  font-family: "Permanent Marker", cursive;
-  font-weight: bold;
-  font-size: 26px;
-}
-.nav-container .logo div {
-  /* margin-left: 10px; */
+.main-content {
+  padding: 10px 6vw;
+  margin-left: 50px;
+  /* border: 1px solid white; */
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.nav-container .logo .bars {
-  font-size: 25px;
-  margin-right: 5px;
-  display: none;
+.tabs-row {
+  width: 90%;
+  /* margin-left: 0; */
 }
-.nav-container .logo h3 span {
-  color: #4c49ed;
+.sidebar {
+  /* border: 1px solid white;  */
+  z-index: 99;
 }
-.nav-container .nav-search input {
-  border: 1px solid black;
-  padding: 10px;
-  width: 600px;
-  border-radius: 10px;
-}
-.nav-container .nav-search {
-  margin-left: 40px;
-}
-.nav-container .nav-btns {
-  gap: 10px;
-}
-.nav-container .nav-btns .login {
-  border: 1px solid;
-  padding: 10px;
-  width: 90px;
-  border-radius: 10px;
-}
-.nav-container .nav-btns .signup {
-  width: 135px;
-  height: 45px;
-  border-radius: 10px;
-  border: #4c49ed solid 1px;
-  font-weight: bold;
-  color: #4c49ed;
-}
-.sidebar-container {
-  width: 300px;
-  height: 100vh;
-  position: fixed;
-  padding: 1rem;
-  background-color: white;
 
-  margin-left: 20px;
-  border-radius: 20px;
+.navbar-container .logo h3 {
+  font-family: 'Pacifico', cursive;
+/* color: #; */
 }
-.sidebar-container .container {
-  margin-top: 5rem;
-}
-.sidebar-container .side-search input {
-  border: none;
-  width: 250px;
-  border-bottom: 2px solid #4c49ed;
-  outline: none;
-}
-.sidebar-container .language-list div:hover {
-  background-color: #f5f5f5;
-}
-.sidebar-container .language-list div:hover span {
-  color: #4c49ed;
-  font-weight: bold;
-}
-.sidebar-container .saved-sol-btn {
-  background-color: #f5f5f5;
-  margin-top: 20px;
-}
-.mobile-searchIcon span {
-  display: none;
-}
-.mobile-searchInput {
-  display: none;
-}
-/* post card  */
-.post-container {
-  margin-top: 7%;
-  margin-left: 30px;
-  display: grid;
-  grid-template-columns: repeat(3, 0.15fr);
-  gap: 10px;
-}
-.post-card {
-  /* width: 300px; */
-  border-radius: 10px;
-  padding: 7px;
-}
-.post-card .profile img {
-  width: 34px;
-}
-.post-card .profile h3 {
-  font-weight: bold;
-  /* color: black;  */
-}
-.post-card .top-row {
-  border-bottom: solid white 2px;
-  padding-bottom: 5px;
-}
-.post-card img.post-screenshot {
-  height: 80px;
-  border-radius: 10px;
-  margin-top: 10px;
-  width: 100%;
-}
-@media screen and (max-width: 720px) {
+
+
+@media screen and (max-width: 700px) {
   .sidebar {
+   width: 0;
+   border: none;
+  }
+  .nav-search {
     display: none;
   }
-  .nav-container .nav-search {
-    display: none;
+  .main-content {
+    margin-left: 0;
+    padding: 10px 0 ;
   }
-  .nav-container .nav-btns .login {
-    display: none;
-  }
-  .nav-container .nav-btns .signup {
-    display: none;
-  }
-  .mobile-searchIcon span {
-    font-size: 20px;
-    margin-right: 10px;
-    display: block;
-  }
-  .mobile-searchInput {
-    display: block;
+  .tabs-row {
     width: 100%;
-    margin-left: 30px;
+    margin-left: 0 ;
   }
-  .mobile-searchInput input {
-    width: 350px;
-  }
-  .nav-container .logo .bars {
-    display: block;
-  }
-  .home-container .content {
-    display: flex;
-    gap: 0;
-  }
-  .post-container {
-    grid-template-columns: repeat(1, 0.15fr);
-    place-content: center;
-    margin-top: 20%;
-    margin-left: 10px;
-  }
-  .post-card {
-    width: 340px;
+  .tabs-row button {
+    display: none;
   }
 }

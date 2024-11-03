@@ -1,41 +1,37 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import { FaBars, FaSearch } from "react-icons/fa";
-const Navbar = ({ showMobileSearch }) => {
+import { FaSearch } from "react-icons/fa";
+import { IoIosNotificationsOutline } from "react-icons/io";
+
+import { FaUserCircle } from "react-icons/fa";
+import { FaBars } from "react-icons/fa6";
+const Navbar = ({toggleSidebar}) => {
   return (
-    <div className="nav-container w-full bg-white px-6 py-3 h10">
-      <div className="container flex items-center ">
-        <div className="flex justify-berween w-full">
-          <div className="logo flex items-center ">
-            <div>
-              <span className="bars">
-                <FaBars />
-              </span>
-            </div>
-            <div>
-              <img src={logo} alt="" />
-              <h3>
-                Dev<span>Post</span>
-              </h3>
-            </div>
-          </div>
-          <div className="nav-search">
-            <input
-              type="text"
-              placeholder="Search error/solution..."
-              className=""
-            />
-          </div>
-        </div>
-        <div className="mobile-searchIcon">
-          <span className="" onClick={showMobileSearch}>
-            <FaSearch />
-          </span>
-        </div>
-        <div className="nav-btns flex items-center">
-          <button className="login font-medium ">Login</button>
-          <button className="signup">Create account</button>
-        </div>
+    <div className="navbar-container p-4 flex items-center justify-around ">
+      <div className="text-white text-2xl" onClick={toggleSidebar}>
+        <FaBars />  
+      </div>
+      <div className="logo flex items-center gap-1 ">
+        <img src={logo} alt="" />
+        <h3 className="text-white font-bold text-lg">DevPost</h3>
+      </div>
+      <div className="flex items-center w-full max-w-md mx-auto nav-search">
+        <input
+          type="text"
+          placeholder="Search"
+          className="w-full px-4 py-2 border border-gray-300 rounded-l-full focus:outline-none focus:border-blue-500 bg-transparent"
+        />
+        <button className="px-4 py-3 bg-gray-100 border border-l-0 border-gray-300 rounded-r-full hover:bg-gray-200">
+          <FaSearch />
+        </button>
+      </div>
+      <div className="flex gap-2">
+        <button className="font-semibold text-white text-3xl ">
+          <IoIosNotificationsOutline />
+        </button>
+        <button className="font-semibold text-white text-3xl ">
+          <FaUserCircle />
+        </button>
       </div>
     </div>
   );

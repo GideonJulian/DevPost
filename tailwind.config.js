@@ -8,10 +8,11 @@ export default {
     extend: {
       colors: {
         'main-blue': '#4c49ed',
-        'light-gray': '#f6f6f6',
-        'light-pink': '#ffe5d9'
+        'hover': '#282828'
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }
