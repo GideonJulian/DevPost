@@ -16,7 +16,7 @@ const Sidebar = () => {
   );
   return (
     <div
-      className="sidebar  md:w-64 h-screen flex flex-col text-white fixed bg-black "
+      className="sidebar  md:w-64 h-screen flex flex-col text-white fixed bg-black"
       style={{
         width: "260px",
       }}

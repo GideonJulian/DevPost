@@ -28,6 +28,7 @@ html {
 .sidebar {
   /* border: 1px solid white;  */
   z-index: 99;
+  margin-top: -20px;
 }
 .navbar-container{
   z-index: 99;

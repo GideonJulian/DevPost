@@ -27,7 +27,7 @@ const Home = () => {
       </div>
 
       <div className="sidebar">{showSideBar && <Sidebar />}</div>
-      <div className="main-content mt-20">
+      <div className="main-content mt-36">
         <div className="w-full bg-black  fixed top-16  ">
           <div className="mobile-search-input px-2 mt-5">
             <input
