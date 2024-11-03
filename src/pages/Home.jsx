@@ -73,7 +73,7 @@ const Home = () => {
             {/* Right scroll button */}
           </div>
         </div>
-        <div className="posts  p-5   w-full grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 ">
+        <div className="posts  p-5   w-full grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2 ">
           {PostDetails.map((items) => (
             <PostCard
               errorImg={items.screenShort}
