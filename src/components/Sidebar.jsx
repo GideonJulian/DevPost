@@ -22,7 +22,7 @@ const Sidebar = () => {
       }}
     >
       <div
-        className="container px-3 overflow-auto"
+        className="container px-2"
         style={{
           overflowY: "auto",
         }}
