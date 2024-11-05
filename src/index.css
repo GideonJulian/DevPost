@@ -30,15 +30,15 @@ html {
   z-index: 99;
   margin-top: -20px;
 }
-.navbar-container{
+.navbar-container {
   z-index: 99;
 }
 .navbar-container .logo h3 {
-  font-family: 'Pacifico', cursive;
-  
-/* color: #; */
+  font-family: "Pacifico", cursive;
+
+  /* color: #; */
 }
-.mobile-search{
+.mobile-search {
   display: none;
 }
 .mobile-search-input {
@@ -51,9 +51,9 @@ html {
   overflow-y: auto;
 }
 .post-card {
-  width: 340px;
+  width: auto;
   height: auto;
-margin-top: 12px;
+  margin-top: 12px;
   /* padding-bottom: 10px; */
   /* border: 1px solid gray; */
   border-radius: 10px;
@@ -67,7 +67,6 @@ margin-top: 12px;
   height: 100%;
   border-radius: 10px;
   width: 100%;
-
 }
 @media screen and (max-width: 700px) {
   .posts {
@@ -77,19 +76,19 @@ margin-top: 12px;
     padding: 5px;
   }
   .sidebar {
-   width: 0;
-   border: none;
+    width: 0;
+    border: none;
   }
   .nav-search {
     display: none;
   }
   .main-content {
     margin-left: 0;
-    padding: 10px 0 ;
+    padding: 10px 0;
   }
   .tabs-row {
     width: 100%;
-    margin-left: 0 ;
+    margin-left: 0;
   }
   .tabs-row button {
     display: none;
@@ -98,9 +97,9 @@ margin-top: 12px;
     padding: 5px 10px;
   }
   .mobile-search {
-    display: block ;
+    display: block;
   }
-  .mobile-search-input{
+  .mobile-search-input {
     display: block;
     z-index: 99;
   }
