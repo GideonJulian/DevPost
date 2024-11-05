@@ -53,13 +53,15 @@ html {
 .post-card {
   width: 340px;
   height: auto;
-  padding-bottom: 10px;
-  border: 1px solid gray;
+margin-top: 12px;
+  /* padding-bottom: 10px; */
+  /* border: 1px solid gray; */
   border-radius: 10px;
 }
 .post-card .img-card {
-  width: 100%;
+  width: 95%;
   height: 180px;
+  margin: auto;
 }
 .post-card .img-card img {
   height: 100%;
