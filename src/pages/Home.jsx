@@ -75,6 +75,7 @@ const Home = () => {
               title={items.erroTitle}
               userImg={items.userProfile}
               userName={items.username}
+              postTags={items.postTags}
             />
           ))}
         </div>

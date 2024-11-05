@@ -11,7 +11,7 @@ body {
   /* color: #d7d7e5; */
 }
 html {
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 .main-content {
   padding: 10px 8vw;
@@ -30,7 +30,7 @@ html {
 
 } */
 .sidebar {
-  /* border: 1px solid white;  */
+  border: 1px solid white; 
   z-index: 99;
   margin-top: -20px;
 }
@@ -85,6 +85,7 @@ html {
   .sidebar {
     width: 0;
     border: none;
+    /* border: 1px solid white; */
   }
   .nav-search {
     display: none;

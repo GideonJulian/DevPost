@@ -15,7 +15,7 @@ const PostDetails = [
     userProfile: userimg1,
     postDate: "Sep 02",
     screenShort: errorImg1,
-    tags: ["REACT", "PYTHON", "CSS"],
+    postTags: ["REACT", "PYTHON", "CSS"],
     // language: 'Typescript'
   },
   {
@@ -26,7 +26,7 @@ const PostDetails = [
     userProfile: userimg2,
     postDate: "Aug 14",
     screenShort: errorImg2,
-    tags: ["HTML", "BOOTSTRAP", "CSS"],
+    postTags: ["HTML", "BOOTSTRAP", "CSS"],
     // language: 'html'
   },
   {
@@ -37,7 +37,7 @@ const PostDetails = [
     userProfile: userimg3,
     postDate: "Jan 01",
     screenShort: errorImg3,
-    tags: ["JAVASCRIPT", "JAVA", "PYTHON"],
+    postTags: ["JAVASCRIPT", "JAVA", "PYTHON"],
     language: 'css'
   },
   {
@@ -48,7 +48,7 @@ const PostDetails = [
     userProfile: userimg3,
     postDate: "Jan 01",
     screenShort: errorImg3,
-    tags: ["JAVASCRIPT", "JAVA", "PYTHON"],
+    postTags: ["JAVASCRIPT", "JAVA", "PYTHON"],
     language: 'css'
   },
   {
@@ -59,7 +59,7 @@ const PostDetails = [
     userProfile: userimg2,
     postDate: "Oct 01",
     screenShort: errorImg2,
-    tags: ["JAVASCRIPT", "JAVA", "PYTHON"],
+    postTags: ["JAVASCRIPT", "JAVA", "PYTHON"],
     // language: 'javascript'
   },
   {
@@ -70,7 +70,7 @@ const PostDetails = [
     userProfile: userimg2,
     postDate: "Oct 01",
     screenShort: errorImg2,
-    tags: ["JAVASCRIPT", "JAVA", "PYTHON"],
+    postTags: ["JAVASCRIPT", "JAVA", "PYTHON"],
     // language: 'javascript'
   },
   {
@@ -81,7 +81,7 @@ const PostDetails = [
     userProfile: userimg3,
     postDate: "Oct 5",
     screenShort: errorImg1,
-    tags: ["RUST", "DART", "LUA"],
+    postTags: ["RUST", "DART", "LUA"],
     // language: 'Python'
   },
 ];
