@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import errorImg3 from "../assets/images/error3.png";
-import userimg1 from "../assets/images/userimg1.png";
-import { LuBarChart2 } from "react-icons/lu";
-import { PiChatTeardropDotsThin } from "react-icons/pi";
-import { CiHeart } from "react-icons/ci";
-import { CiBookmark } from "react-icons/ci";
-import { CiShare1 } from "react-icons/ci";
+import { PiLink } from "react-icons/pi";
+import { BsChatSquareText } from "react-icons/bs";
+import { VscThumbsdown, VscThumbsup } from "react-icons/vsc";
+
+import { LuBookmark } from "react-icons/lu";
 const PostCard = ({ errorImg, title, userImg, userName }) => {
-  const [liked, setLiked ] = useState(false)
+  const [liked, setLiked] = useState(false);
   // const handleLiked = () = > {
 
   // }
@@ -16,34 +14,43 @@ const PostCard = ({ errorImg, title, userImg, userName }) => {
       <div className="py-2 px-1">
         <div className="flex items-center">
           <img src={userImg} alt="" className="w-10 cursor-pointer" />
-          <p className="text-sm text-gray-400 font-semibold ml-1 cursor-pointer">{userName}</p>
+          <div className="flex flex-col ml-1">
+            <p className="text-sm text-white font-semibold ml-1 cursor-pointer">
+              {userName}
+            </p>
+            <p className="text-sm text-gray-400 font-semibold ml-1">
+              Frontend dev
+            </p>
+          </div>
         </div>
-        <h3 className="text-white p-1 font-semibold text-sm ">{title}</h3>
+        <h3 className="text-white p-1 font-bold text-lg ">{title}</h3>
       </div>
       <div className="img-card">
         <img src={errorImg} alt="" />
       </div>
-      <div className="flex items-center  justify-between  p-2">
-        <div className="flex items-center gap-4">
-          <span className="text-white flex items-center cursor-pointer">
-            <PiChatTeardropDotsThin />
-            <span>2</span>
+      <div className="flex items-center  justify-between  p-2   ">
+        <div className="flex items-center gap-4 ">
+          <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-xl gap-2">
+            <span className="text-lg">
+              <VscThumbsup />
+            </span>
+            <span className="">2</span>
+            <span className="w-px h-4 bg-white"></span>
+            <span>
+              <VscThumbsdown />
+            </span>
+            <span className="">2</span>
           </span>
-          <span className="text-white flex items-center cursor-pointer">
-            <CiHeart />
-            <span>1k</span>
+          <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-xl gap-2">
+            <BsChatSquareText />
+            <span className="w-px h-4 bg-white"></span>
+            <span className="">2</span>
           </span>
-          <span className="text-white flex items-center">
-            <LuBarChart2 />
-            <span>2k</span>
+          <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-lg gap-2">
+            <LuBookmark />
           </span>
-        </div>
-        <div className="flex items-center gap-2 ">
-          <span  className="text-white flex items-center cursor-pointer">
-            <CiBookmark/>
-          </span>
-          <span  className="text-white flex items-center cursor-pointer">
-            <CiShare1/>
+          <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-lg gap-2">
+            <PiLink />
           </span>
         </div>
       </div>

@@ -21,39 +21,36 @@ const Home = () => {
     setShowSideBar(!showSideBar);
   };
   return (
-    <div>
+    <div className="">
+      <div className="sidebar">{showSideBar && <Sidebar />}</div>
       <div className="nav-bar">
         <Navbar toggleSidebar={toggleSidebar} />
       </div>
-
-      <div className="sidebar">{showSideBar && <Sidebar />}</div>
-      <div className="main-content mt-36">
-        <div className="w-full bg-black  fixed top-16  ">
-          <div className="mobile-search-input px-2 mt-5">
+      <div className="main-content mt-28 w-full">
+        <div className="w-full bg-grey-blue top-10  ">
+          <div className="mobile-search-input px-3 mt-5">
             <input
               type="text"
               placeholder="Search error"
               className="w-full px-3 py-2 text-white bg-transparent border rounded-md "
             />
           </div>
-          <div
-            className="tabs-row p-2 flex items-center gap-2 scrollbar scrollbar-track-transparent scrollbar-thumb-transparent  ml-20 "
-            style={{ overflowX: "auto" }}
-          >
+
+          <div className="flex items-cneter justify-center lg:ml-24 sm:ml-0">
             <div
               ref={carouselRef}
-              className="tabs-row w-full p-3 flex items-center gap-2 overflow-x-auto scrollbar scrollbar-track-transparent scrollbar-thumb-transparent ml-14"
+              className="tabs-row w-90 p-3 flex items-center gap-2 overflow-x-auto scrollbar scrollbar-track-transparent scrollbar-thumb-transparent ml-14"
               style={{
                 scrollSnapType: "x mandatory",
                 scrollBehavior: "smooth",
               }}
             >
-              <button
+              {/* <button
                 onClick={scrollLeft}
                 className="absolute left-64 z-10 p-2 bg-gray-700 text-white rounded-full"
               >
                 {"<"}
-              </button>
+              </button> */}
               {tags.map((tag, index) => (
                 <div
                   key={index}
@@ -62,15 +59,13 @@ const Home = () => {
                   {tag}
                 </div>
               ))}
-              <button
+              {/* <button
                 onClick={scrollRight}
                 className="absolute right-32 z-10 p-2 bg-gray-700 text-white rounded-full"
               >
                 {">"}
-              </button>
+              </button> */}
             </div>
-
-            {/* Right scroll button */}
           </div>
         </div>
         <div className="posts  p-8   w-full grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2 ">
