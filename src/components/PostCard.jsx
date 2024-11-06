@@ -48,7 +48,7 @@ const PostCard = ({ errorImg, title, userImg, userName, postTags }) => {
           </div>
         </div>
         <h3 className="text-white p-1 font-bold text-lg ">{title}</h3>
-      </div>
+      </div> 
       <div className="tags-row flex gap-2 mb-2 ml-2 ">
         {postTags.map((tag, index) => (
           <span

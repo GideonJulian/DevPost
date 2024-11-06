@@ -43,6 +43,9 @@ const Home = () => {
             <input
               type="text"
               placeholder="Search error"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+    
               className="w-full px-3 py-2 text-white bg-transparent border rounded-md "
             />
           </div>
