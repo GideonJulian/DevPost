@@ -55,7 +55,7 @@ const PostCard = ({ errorImg, title, userImg, userName, postTags }) => {
             key={index}
             className="text-white-blue px-2 py-1 rounded-md border border-icon-col text-xs font-normal whitespace-nowrap"
           >
-            {tag}
+            #{tag}
           </span>
         ))}
       </div>

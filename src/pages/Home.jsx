@@ -6,6 +6,7 @@ import PostCard from "../components/PostCard";
 import PostDetails from "../utils/PostDetails";
 const Home = () => {
   const [showSideBar, setShowSideBar] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
   const carouselRef = useRef(null);
 
   // Scroll to the left
@@ -20,11 +21,21 @@ const Home = () => {
   const toggleSidebar = () => {
     setShowSideBar(!showSideBar);
   };
+  const filteredPosts = PostDetails.filter(
+    (post) =>
+      post.erroTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.postTags.some((tag) =>
+        tag.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+  );
   return (
     <div className="">
       <div className="sidebar">{showSideBar && <Sidebar />}</div>
       <div className="nav-bar">
-        <Navbar toggleSidebar={toggleSidebar} />
+        <Navbar
+          toggleSidebar={toggleSidebar}
+          onSearch={(query) => setSearchQuery(query)}
+        />
       </div>
       <div className="main-content mt-28 w-full">
         <div className="w-full bg-grey-blue top-10  ">
@@ -54,7 +65,7 @@ const Home = () => {
               {tags.map((tag, index) => (
                 <div
                   key={index}
-                  className="tab text-white px-6 py-2 rounded-md bg-hover w-72 text-sm whitespace-nowrap text-ellipsis cursor-pointer"
+                  className="tab text-white px-6 py-2 rounded-md bg-icon-col w-72 text-sm whitespace-nowrap text-ellipsis cursor-pointer"
                 >
                   {tag}
                 </div>
@@ -69,7 +80,7 @@ const Home = () => {
           </div>
         </div>
         <div className="posts  p-8   w-full grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2 ">
-          {PostDetails.map((items) => (
+          {filteredPosts.map((items) => (
             <PostCard
               errorImg={items.screenShort}
               title={items.erroTitle}
