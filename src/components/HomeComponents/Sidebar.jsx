@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 import programmingData from "../../utils/progrommingList";
 
 import { useState, useEffect } from "react";
-const Sidebar = ({ isOpen }) => {
+const Sidebar = ({ isOpen, onClick }) => {
   const [searchQuery, setSearchquery] = useState("");
   const filteredLanguages = programmingData.filter((language) =>
     language.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -14,13 +14,16 @@ const Sidebar = ({ isOpen }) => {
 
   return (
     <div
-      className={`bg-white text-black transition-all duration-300 shadow-lg h-screen ${
+      className={`bg-white text-black transition-all duration-300 shadow-lg h-screen absolute md:relative  ${
         isOpen ? "w-72" : "w-0"
       }`}
     >
-      <div className="p-4 flex items-center gap-1">
-        <img src={logo} alt="" />
-        <h3 className="font-bold text-2xl text-blue-600">DevPost</h3>
+      <div className={`p-4 flex items-center justify-between gap-1 ${isOpen ? "" : "hidden"}`}>
+        <div className="flex items-center">
+          <img src={logo} alt="" />
+          <h3 className="font-bold text-2xl text-blue-600">DevPost</h3>
+        </div>
+        <i class="bi bi-x text-2xl block md:hidden" onClick={onClick}></i>
       </div>
 
       <div className="px-3">
