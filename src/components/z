@@ -17,48 +17,48 @@
 //   const navigate = useNavigate();
 //   const carouselRef = useRef(null);
 
-//   // Scroll to the left
-//   const scrollLeft = () => {
-//     carouselRef.current.scrollBy({ left: -200, behavior: "smooth" });
-//   };
+  // Scroll to the left
+  const scrollLeft = () => {
+    carouselRef.current.scrollBy({ left: -200, behavior: "smooth" });
+  };
 
-//   // Scroll to the right
-//   const scrollRight = () => {
-//     carouselRef.current.scrollBy({ left: 200, behavior: "smooth" });
-//   };
-//   const toggleSidebar = () => {
-//     setShowSideBar(!showSideBar);
-//     console.log("Sidebar state toggled:", !showSideBar);
-//   };
-//   const matchesSearchQuery = (post) => {
-//     return (
-//       post.erroTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
-//       post.postTags.some((tag) =>
-//         tag.toLowerCase().includes(searchQuery.toLowerCase())
-//       )
-//     );
-//   };
-//   const matchesSelectedLaguage = (post) => {
-//     if (!selectedLanguage) return true;
-//     return post.postTags.some(
-//       (tag) => tag.toLowerCase() === String(selectedLanguage).toLowerCase()
-//     );
-//   };
-//   // (post) => matchesSearchQuery(post) &&
-//   const filteredPosts = PostData.filter(
-//     (post) => matchesSearchQuery(post) && matchesSelectedLaguage(post)
-//   );
-//   const handleLanguageSelect = (language) => {
-//     setSelectedLanguage(language);
-//   };
-//   const handleNavigate = (id) => {
-//     console.log("Navigating to post with ID:", id);
-//     if (id) {
-//       navigate(`/post/${id}`);
-//     } else {
-//       console.error("Invalid post ID");
-//     }
-//   };
+  // Scroll to the right
+  const scrollRight = () => {
+    carouselRef.current.scrollBy({ left: 200, behavior: "smooth" });
+  };
+  const toggleSidebar = () => {
+    setShowSideBar(!showSideBar);
+    console.log("Sidebar state toggled:", !showSideBar);
+  };
+  const matchesSearchQuery = (post) => {
+    return (
+      post.erroTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.postTags.some((tag) =>
+        tag.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    );
+  };
+  const matchesSelectedLaguage = (post) => {
+    if (!selectedLanguage) return true;
+    return post.postTags.some(
+      (tag) => tag.toLowerCase() === String(selectedLanguage).toLowerCase()
+    );
+  };
+  // (post) => matchesSearchQuery(post) &&
+  const filteredPosts = PostData.filter(
+    (post) => matchesSearchQuery(post) && matchesSelectedLaguage(post)
+  );
+  const handleLanguageSelect = (language) => {
+    setSelectedLanguage(language);
+  };
+  const handleNavigate = (id) => {
+    console.log("Navigating to post with ID:", id);
+    if (id) {
+      navigate(`/post/${id}`);
+    } else {
+      console.error("Invalid post ID");
+    }
+  };
 //   return (
 //     <div className="">
 //       <div className="sidebar">
@@ -81,8 +81,8 @@
 //             <input
 //               type="text"
 //               placeholder="Search error"
-//               value={searchQuery}
-//               onChange={(e) => setSearchQuery(e.target.value)}
+            //   value={searchQuery}
+            //   onChange={(e) => setSearchQuery(e.target.value)}
 //               className="w-full px-3 py-2 text-white bg-transparent border rounded-md "
 //             />
 //           </div>
@@ -108,17 +108,17 @@
 //           </div>
 //         </div>
 //         <div className="posts  p-8   w-full grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2 ">
-//           {filteredPosts.map((item) => (
-//             <PostCard
-//               key={item.id}
-//               errorImg={item.screenShort}
-//               title={item.erroTitle}
-//               userImg={item.userProfile}
-//               userName={item.username}
-//               postTags={item.postTags}
-//               onClick={() => handleNavigate(item.id)}
-//             />
-//           ))}
+        //   {filteredPosts.map((item) => (
+        //     <PostCard
+        //       key={item.id}
+        //       errorImg={item.screenShort}
+        //       title={item.erroTitle}
+        //       userImg={item.userProfile}
+        //       userName={item.username}
+        //       postTags={item.postTags}
+        //       onClick={() => handleNavigate(item.id)}
+        //     />
+        //   ))}
 //         </div>
 //         {filteredPosts.length === 0 && (
 //           <div>

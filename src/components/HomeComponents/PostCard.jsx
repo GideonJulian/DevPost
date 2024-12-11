@@ -34,12 +34,12 @@ const PostCard = ({ errorImg, title, userImg, userName, postTags, onClick }) => 
     }
   };
   return (
-    <div className="post-card cursor-pointer " >
+    <div className="post-card cursor-pointer border rounded-md bg-white " >
       <div className="py-2 px-1">
         <div className="flex items-center">
           <img src={userImg} alt="" className="w-10 cursor-pointer" />
           <div className="flex flex-col ml-1">
-            <p className="text-sm text-white font-semibold ml-1 cursor-pointer">
+            <p className="text-sm text-black font-semibold ml-1 cursor-pointer">
               {userName}
             </p>
             <p className="text-sm text-gray-400 font-semibold ml-1">
@@ -47,7 +47,7 @@ const PostCard = ({ errorImg, title, userImg, userName, postTags, onClick }) => 
             </p>
           </div>
         </div>
-        <h3 className="text-white p-1 font-bold text-lg " onClick={onClick}>{title}</h3>
+        <h3 className="text-black p-1 font-bold text-lg " onClick={onClick}>{title}</h3>
       </div> 
       <div className="tags-row flex gap-2 mb-2 ml-2 ">
         {postTags.map((tag, index) => (
@@ -59,35 +59,35 @@ const PostCard = ({ errorImg, title, userImg, userName, postTags, onClick }) => 
           </span>
         ))}
       </div>
-      <div className="img-card">
+      <div className="img-card p-2">
         <img src={errorImg} alt="" onClick={onClick}/>
       </div>
       <div className="flex items-center  justify-between  p-2   ">
         <div className="flex items-center gap-4 ">
-          <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-xl gap-2">
+          <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-background rounded-xl gap-2">
             <div className="flex items-center gap-1">
-              <span className="text-lg" onClick={handleLike}>
+              <span className="text-lg text-white" onClick={handleLike}>
                 <VscThumbsup />
               </span>
-              <span className="">{likes}</span>
+              <span className="text-white">{likes}</span>
             </div>
             <span className="w-px h-4 bg-white"></span>
-            <div className="flex items-center gap-1" onClick={handleDisLike}>
+            <div className="flex items-center gap-1 text-white " onClick={handleDisLike}>
               <span>
                 <VscThumbsdown />
               </span>
-              <span className="">{disLikes}</span>
+              <span className="text-white">{disLikes}</span>
             </div>
           </span>
-          <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-xl gap-2">
+          <span className="text-white  bg-background font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-xl gap-2">
             <BsChatSquareText />
             <span className="w-px h-4 bg-white"></span>
-            <span className="">2</span>
+            <span className="text-white">2</span>
           </span>
-          <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-lg gap-2">
+          <span className="text-white bg-background font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-lg gap-2">
             <LuBookmark />
           </span>
-          <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-lg gap-2">
+          <span className="text-white bg-background font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-lg gap-2">
             <PiLink />
           </span>
         </div>

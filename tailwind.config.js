@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'background': '#f6fff8',
+        'background': '#284b63',
         'sidebar-bg': '#ffffff',
         'logo-color': '#3c6e71'
       }
