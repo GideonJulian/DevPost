@@ -1,106 +1,309 @@
-   {/* <div className="side-search">
-          <input
-            value={searchQuery}
-            type="text"
-            className=" px-3 py-2 h-10 border rounded rounded-lg mt-4"
-            placeholder="Search "
-            onChange={handleSearchlanguage}
-          />
-        </div>
-        <ul
-          className="ml-2 mt-5 language-list px-5"
-          style={{
-            height: "350px",
-            overflowY: "auto",
-          }}
-        >
-          {filteredLanguages.map((items) => {
-            return (
-              <div className="flex items-center gap-2 cursor-pointer mt-2 px-2 py-3 ">
-                <span>
-                  <items.icon />
-                </span>
-                <span>{items.name}</span>
-              </div>
-            );
-          })}
-        </ul> */}
-        {/* <div className="saved-solution ">
-          <div className="mt-3 px-3 py-2 h-10 bg-gray w-full flex items-center gap-2 saved-sol-btn">
-            <span className="font-medium ">Saved solution</span>
-            <span className="text-main-blue text-lg text-bold ">
-              <BsFillBookmarkStarFill />
-            </span>
-          </div>
-          <ul>
-            <p className="text-sm font-medium font-italic">You need to register to access your saved solutions.</p>
-          </ul>
-        </div> */}
+//https://coolors.co/palette/353535-3c6e71-ffffff-d9d9d9-284b63
 
 
-        
-        <div className="text-white px-6 py-2 rounded-sm bg-hover w-72 text-sm whitespace-nowrap  text-ellipsis">
-          {tag}
-        </div>
+// import React, { useRef, useState } from "react";
+// import Navbar from "../components/HomeComponents/Navbar";
+// import Sidebar from "../components/HomeComponents/Sidebar";
+// import tags from "../utils/Tags";
+// import PostCard from "../components/HomeComponents/PostCard";
+// import PostData from "../utils/PostData";
+// import RecommendedPost from "../components/RecommendedPost";
+// import { Outlet } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+// const Home = () => {
+//   const [showSideBar, setShowSideBar] = useState(true);
+//   const [searchQuery, setSearchQuery] = useState("");
+//   const [selectedLanguage, setSelectedLanguage] = useState(null);
+//   const navigate = useNavigate();
+//   const carouselRef = useRef(null);
+
+//   // Scroll to the left
+//   const scrollLeft = () => {
+//     carouselRef.current.scrollBy({ left: -200, behavior: "smooth" });
+//   };
+
+//   // Scroll to the right
+//   const scrollRight = () => {
+//     carouselRef.current.scrollBy({ left: 200, behavior: "smooth" });
+//   };
+//   const toggleSidebar = () => {
+//     setShowSideBar(!showSideBar);
+//     console.log("Sidebar state toggled:", !showSideBar);
+//   };
+//   const matchesSearchQuery = (post) => {
+//     return (
+//       post.erroTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//       post.postTags.some((tag) =>
+//         tag.toLowerCase().includes(searchQuery.toLowerCase())
+//       )
+//     );
+//   };
+//   const matchesSelectedLaguage = (post) => {
+//     if (!selectedLanguage) return true;
+//     return post.postTags.some(
+//       (tag) => tag.toLowerCase() === String(selectedLanguage).toLowerCase()
+//     );
+//   };
+//   // (post) => matchesSearchQuery(post) &&
+//   const filteredPosts = PostData.filter(
+//     (post) => matchesSearchQuery(post) && matchesSelectedLaguage(post)
+//   );
+//   const handleLanguageSelect = (language) => {
+//     setSelectedLanguage(language);
+//   };
+//   const handleNavigate = (id) => {
+//     console.log("Navigating to post with ID:", id);
+//     if (id) {
+//       navigate(`/post/${id}`);
+//     } else {
+//       console.error("Invalid post ID");
+//     }
+//   };
+//   return (
+//     <div className="">
+//       <div className="sidebar">
+//         {showSideBar && (
+//           <Sidebar
+//             onLanguageSelect={handleLanguageSelect}
+//             toggleSidebar={toggleSidebar}
+//           />
+//         )}
+//       </div>
+//       <div className="nav-bar">
+//         <Navbar
+//           toggleSidebar={toggleSidebar}
+//           onSearch={(query) => setSearchQuery(query)}
+//         />
+//       </div>
+//       <div className="main-content mt-28 w-full">
+//         <div className="w-full bg-grey-blue top-10  ">
+//           <div className="mobile-search-input px-3 mt-5">
+//             <input
+//               type="text"
+//               placeholder="Search error"
+//               value={searchQuery}
+//               onChange={(e) => setSearchQuery(e.target.value)}
+//               className="w-full px-3 py-2 text-white bg-transparent border rounded-md "
+//             />
+//           </div>
+
+//           <div className="flex items-cneter justify-center lg:ml-24 sm:ml-0">
+//             <div
+//               ref={carouselRef}
+//               className="tabs-row w-90 p-3 flex items-center gap-2 overflow-x-auto scrollbar scrollbar-track-transparent scrollbar-thumb-transparent ml-14"
+//               style={{
+//                 scrollSnapType: "x mandatory",
+//                 scrollBehavior: "smooth",
+//               }}
+//             >
+//               {tags.map((tag, index) => (
+//                 <div
+//                   key={index}
+//                   className="tab text-white px-6 py-2 rounded-md bg-icon-col w-72 text-sm whitespace-nowrap text-ellipsis cursor-pointer"
+//                 >
+//                   {tag}
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//         <div className="posts  p-8   w-full grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2 ">
+//           {filteredPosts.map((item) => (
+//             <PostCard
+//               key={item.id}
+//               errorImg={item.screenShort}
+//               title={item.erroTitle}
+//               userImg={item.userProfile}
+//               userName={item.username}
+//               postTags={item.postTags}
+//               onClick={() => handleNavigate(item.id)}
+//             />
+//           ))}
+//         </div>
+//         {filteredPosts.length === 0 && (
+//           <div>
+//             <div className="text-white text-center w-full">
+//               <h3 className="text-lg font-semibold">
+//                 No posts match your search. Here are some recommended posts you
+//                 might like!
+//               </h3>
+//             </div>
+//             <div>
+//               <RecommendedPost />
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//       <div>
+//         <Outlet />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+
+// NAVBAR 
+// import React, { useState } from "react";
+// import logo from '../../assets/logo.png'
+// import { FaSearch } from "react-icons/fa";
+// import { IoIosNotificationsOutline } from "react-icons/io";
+
+// import { FaUserCircle } from "react-icons/fa";
+// import { FaBars } from "react-icons/fa6";
+// const Navbar = ({ toggleSidebar, onSearch }) => {
+
+//   const handleSearchPost = (e) => {
+//     onSearch(e.target.value )
+//   }
+//   return (
+//     <div className=" navbar-container p-4 flex bg-grey-blue items-center justify-around w-full fixed top-0  mb-10 top-0 ">
+//       <div className="text-white text-2xl" onClick={toggleSidebar}>
+//         <FaBars />
+//       </div>
+//       <div className="logo flex items-center gap-1 ">
+//         <img src={logo} alt="" />
+//         <h3 className="text-white font-bold text-lg">DevPost</h3>
+//       </div>
+//       <div className="flex items-center w-full max-w-md mx-auto nav-search">
+//         <input
+//           type="text"
+//           placeholder="Search"
+//           onChange={handleSearchPost}
+//           className="w-full px-4 py-2 border text-white border-gray-300 rounded-l-full focus:outline-none focus:border-blue-500 bg-transparent"
+//         />
+//         <button className="px-4 py-3 bg-gray-100 border border-l-0 border-gray-300 rounded-r-full hover:bg-gray-200">
+//           <FaSearch />
+//         </button>
+//       </div>
+
+//       <div className="flex gap-2">
+//         <button className="font-semibold text-white text-3xl ">
+//           <IoIosNotificationsOutline />
+//         </button>
+//         <button className="font-semibold text-white text-3xl ">
+//           <FaUserCircle />
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Navbar;
 
 
 
+// import React, { useState } from "react";
+// import { FaBars, FaTimes } from "react-icons/fa";
+// import { Link } from "react-router-dom";
+// import { GoHomeFill } from "react-icons/go";
+// import { BsGear } from "react-icons/bs";
+// import { FaBookmark } from "react-icons/fa6";
+// import { CiFlag1 } from "react-icons/ci";
+// import programmingData from "../../utils/progrommingList";
+
+// const Sidebar = ({ onLanguageSelect, toggleSidebar  }) => {
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar initially closed on mobile
+//   const [searchQuery, setSearchquery] = useState("");
+
+//   const handleToggleSidebar = () => {
+//     setIsSidebarOpen((prevState) => !prevState); // Toggle the sidebar state
+//     console.log("Sidebar state toggled:", !isSidebarOpen); // Debug: Check state change
+//   };
 
 
 
+//   const filteredLanguages = programmingData.filter((language) =>
+//     language.name.toLowerCase().includes(searchQuery.toLowerCase())
+//   );
 
-        <div className="w-full bg-grey-blue top-16  ">
-          <div className="mobile-search-input px-3 mt-5">
-            <input
-              type="text"
-              placeholder="Search error"
-              className="w-full px-3 py-2 text-white bg-transparent border rounded-md "
-            />
-          </div>
-          {/* <div
-            className="tabs-row  p-2 flex items-center gap-2 scrollbar scrollbar-track-transparent scrollbar-thumb-transparent  ml-20 "
-            style={{ overflowX: "auto" }}
-          > */}
+//   const handleLanguageClick = (language) => {
+//     onLanguageSelect(language);
+//   };
 
-          <div className="flex items-cneter justify-center lg:ml-24 sm:ml-0">
-            <div
-              ref={carouselRef}
-              className="tabs-row w-90 p-3 flex items-center gap-2 overflow-x-auto scrollbar scrollbar-track-transparent scrollbar-thumb-transparent ml-14"
-              style={{
-                scrollSnapType: "x mandatory",
-                scrollBehavior: "smooth",
-              }}
-            >
-              <button
-                onClick={scrollLeft}
-                className="absolute left-64 z-10 p-2 bg-gray-700 text-white rounded-full"
-              >
-                {"<"}
-              </button>
-              {tags.map((tag, index) => (
-                <div
-                  key={index}
-                  className="tab text-white px-6 py-2 rounded-md bg-hover w-72 text-sm whitespace-nowrap text-ellipsis cursor-pointer"
-                >
-                  {tag}
-                </div>
-              ))}
-              <button
-                onClick={scrollRight}
-                className="absolute right-32 z-10 p-2 bg-gray-700 text-white rounded-full"
-              >
-                {">"}
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="posts  p-8   w-full grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2 ">
-          {PostDetails.map((items) => (
-            <PostCard
-              errorImg={items.screenShort}
-              title={items.erroTitle}
-              userImg={items.userProfile}
-              userName={items.username}
-            />
-          ))}
-        </div>
+//   return (
+//     <>
+//       {/* Toggle Button */}
+//       <button
+//         className="fixed top-4 left-4 md:hidden z-50 text-white bg-blue-600 p-2 rounded"
+//         onClick={toggleSidebar}
+//       >
+//         <FaTimes size={20} />
+//       </button>
+
+//       {/* Sidebar */}
+//       <div
+//         className={`sidebar md:w-64 h-full flex flex-col text-white fixed top-24 bg-grey-blue px-2 transition-transform duration-300 ease-in-out z-40 ${
+//           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+//         } md:translate-x-0`}
+//         style={{
+//           width: "260px",
+//           overflow: "auto",
+//         }}
+//       >
+//         <div className="container px-2" style={{ overflowY: "auto" }}>
+//           <div className="links border-b pb-6 flex flex-col gap-2">
+//             <Link className="flex items-center px-3 py-3 space-x-6 bg-hover rounded-md text-white font-semibold text-sm">
+//               <span className="text-white font-semibold text-2xl">
+//                 <GoHomeFill />
+//               </span>
+//               <span>Home</span>
+//             </Link>
+//             <Link className="flex items-center px-3 py-3 space-x-6 hover:bg-hover rounded-md text-white font-semibold text-sm">
+//               <span className="text-white font-semibold text-2xl ">
+//                 <FaBookmark />
+//               </span>
+//               <span>Saved</span>
+//             </Link>
+//           </div>
+//           <div className="mt-3 border-b">
+//             <h3 className="font-semibold">Popular Language</h3>
+//             <div className="side-search">
+//               <input
+//                 value={searchQuery}
+//                 type="text"
+//                 className="px-3 py-2 h-10 border  rounded-lg mt-4 bg-hover"
+//                 placeholder="Search"
+//                
+//               />
+//             </div>
+//             <ul
+//               style={{ overflow: "auto", height: "250px" }}
+//               className="mt-4 overflow-y-scroll scrollbar-hidden"
+//             >
+//               {filteredLanguages.map((data, language) => (
+//                 <div
+//                   key={data.id}
+//                   onClick={() => handleLanguageClick(language)}
+//                   className="p-3 flex items-center gap-6 hover:bg-hover rounded-md cursor-pointer"
+//                 >
+//                   <span className="text-lg">
+//                     <data.icon />
+//                   </span>
+//                   <span>{data.name}</span>
+//                 </div>
+//               ))}
+//             </ul>
+//           </div>
+//           <div className="mt-3 border-b pb-3">
+//             <div className="p-3 flex items-center gap-6 hover:bg-hover rounded-md cursor-pointer">
+//               <span className="text-lg">
+//                 <BsGear />
+//               </span>
+//               <span>Settings</span>
+//             </div>
+//             <div className="p-3 flex items-center gap-6 hover:bg-hover rounded-md cursor-pointer">
+//               <span className="text-lg">
+//                 <CiFlag1 />
+//               </span>
+//               <span>Privacy</span>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Sidebar;

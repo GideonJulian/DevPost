@@ -6,193 +6,232 @@ const programmingData = [
   {
     id: 1,
     name: "C",
-    icon: SiC
+    icon: "bi-code-slash",
+    color: "#A8B9CC"
   },
   {
     id: 2,
     name: "C++",
-    icon: SiCplusplus
+    icon: "bi-code-slash",
+    color: "#00599C"
   },
   {
     id: 3,
     name: "Java",
-    icon: FaJava
+    icon: "bi-cup-hot",
+    color: "#007396"
   },
   {
     id: 4,
     name: "Python",
-    icon: FaPython
+    icon: "bi-gear",
+    color: "#3776AB"
   },
   {
     id: 5,
-    icon: FaJs,
-    name: "javascript",
+    name: "JavaScript",
+    icon: "bi-lightbulb",
+    color: "#F7DF1E"
   },
   {
     id: 6,
     name: "Ruby",
-    icon: SiRuby
+    icon: "bi-gem",
+    color: "#CC342D"
   },
   {
     id: 7,
     name: "PHP",
-    icon: FaPhp
+    icon: "bi-file-code",
+    color: "#777BB4"
   },
   {
     id: 8,
     name: "Swift",
-    icon: FaSwift
+    icon: "bi-lightning",
+    color: "#FA7343"
   },
   {
     id: 9,
     name: "Go",
-    icon: SiGo
+    icon: "bi-box-arrow-in-right",
+    color: "#00ADD8"
   },
   {
     id: 10,
     name: "Rust",
-    icon: FaRust
+    icon: "bi-shield",
+    color: "#DEA584"
   },
   {
     id: 11,
     name: "TypeScript",
-    icon: SiTypescript
+    icon: "bi-clipboard-data",
+    color: "#3178C6"
   },
   {
     id: 12,
     name: "Kotlin",
-    icon: SiKotlin
+    icon: "bi-braces",
+    color: "#0095D5"
   },
   {
     id: 13,
     name: "Perl",
-    icon: SiPerl
+    icon: "bi-pen",
+    color: "#39457E"
   },
   {
     id: 14,
     name: "Dart",
-    icon: SiDart
+    icon: "bi-arrow-right-circle",
+    color: "#0175C2"
   },
   {
     id: 15,
     name: "R",
-    icon: SiR
+    icon: "bi-bar-chart",
+    color: "#276DC3"
   },
   {
     id: 16,
     name: "Scala",
-    icon: SiScala
+    icon: "bi-stack",
+    color: "#DC322F"
   },
   {
     id: 17,
     name: "Elixir",
-    icon: SiElixir
+    icon: "bi-droplet",
+    color: "#4E2A8E"
   },
   {
     id: 18,
     name: "Haskell",
-    icon: SiHaskell
+    icon: "bi-box",
+    color: "#5D4F85"
   },
   {
     id: 19,
     name: "Lua",
-    icon: SiLua
+    icon: "bi-moon",
+    color: "#2C2D72"
   },
   {
     id: 20,
     name: "HTML",
-    icon: FaHtml5
+    icon: "bi-file-earmark-code",
+    color: "#E34F26"
   },
   {
     id: 21,
     name: "CSS",
-    icon: FaCss3Alt
+    icon: "bi-file-earmark-richtext",
+    color: "#1572B6"
   },
   {
     id: 22,
     name: "React",
-    icon: FaReact
+    icon: "bi-bootstrap-reboot",
+    color: "#61DAFB"
   },
   {
     id: 23,
     name: "Angular",
-    icon: FaAngular
+    icon: "bi-diagram-3",
+    color: "#DD0031"
   },
   {
     id: 24,
     name: "Vue.js",
-    icon: FaVuejs
+    icon: "bi-tree",
+    color: "#4FC08D"
   },
   {
     id: 25,
     name: "Node.js",
-    icon: FaNodeJs
+    icon: "bi-node-plus",
+    color: "#339933"
   },
   {
     id: 26,
     name: "Django",
-    icon: SiDjango
+    icon: "bi-building",
+    color: "#092E20"
   },
   {
     id: 27,
     name: "Flask",
-    icon: SiFlask
+    icon: "bi-beaker",
+    color: "#000000"
   },
   {
     id: 28,
     name: "Spring Boot",
-    icon: SiSpringboot
+    icon: "bi-flower1",
+    color: "#6DB33F"
   },
   {
     id: 29,
     name: "Laravel",
-    icon: FaLaravel
+    icon: "bi-layers",
+    color: "#FF2D20"
   },
   {
     id: 30,
     name: "Docker",
-    icon: FaDocker
+    icon: "bi-box-seam",
+    color: "#2496ED"
   },
   {
     id: 31,
     name: "Kubernetes",
-    icon: SiKubernetes
+    icon: "bi-cloud",
+    color: "#326CE5"
   },
   {
     id: 32,
     name: "Unity",
-    icon: FaUnity
+    icon: "bi-diagram-3",
+    color: "#000000"
   },
   {
     id: 33,
     name: "Unreal Engine",
-    icon: SiUnrealengine
+    icon: "bi-layout-text-window",
+    color: "#0E1128"
   },
   {
     id: 34,
     name: "TensorFlow",
-    icon: SiTensorflow
+    icon: "bi-diagram-2",
+    color: "#FF6F00"
   },
   {
     id: 35,
     name: "PyTorch",
-    icon: SiPytorch
+    icon: "bi-lightbulb",
+    color: "#EE4C2C"
   },
   {
     id: 36,
     name: "Electron",
-    icon: SiElectron
+    icon: "bi-lightning-charge",
+    color: "#47848F"
   },
   {
     id: 37,
     name: "Arduino",
-    icon: SiArduino
+    icon: "bi-cpu",
+    color: "#00979D"
   },
   {
     id: 38,
     name: "Micropython",
-    icon: SiMicropython
+    icon: "bi-motherboard",
+    color: "#000000"
   }
 ];
+  
 
 export default programmingData;

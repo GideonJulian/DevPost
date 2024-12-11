@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { PiLink } from "react-icons/pi";
 import { BsChatSquareText } from "react-icons/bs";
 import { VscThumbsdown, VscThumbsup } from "react-icons/vsc";
-import PostDetails from "../utils/PostDetails";
+import PostDetails from "../../utils/PostData";
 import { LuBookmark } from "react-icons/lu";
-const PostCard = ({ errorImg, title, userImg, userName, postTags }) => {
+const PostCard = ({ errorImg, title, userImg, userName, postTags, onClick }) => {
   const [likes, setLikes] = useState(0);
   const [disLikes, setDisLikes] = useState(0);
 
@@ -34,7 +34,7 @@ const PostCard = ({ errorImg, title, userImg, userName, postTags }) => {
     }
   };
   return (
-    <div className="post-card ">
+    <div className="post-card cursor-pointer " >
       <div className="py-2 px-1">
         <div className="flex items-center">
           <img src={userImg} alt="" className="w-10 cursor-pointer" />
@@ -47,7 +47,7 @@ const PostCard = ({ errorImg, title, userImg, userName, postTags }) => {
             </p>
           </div>
         </div>
-        <h3 className="text-white p-1 font-bold text-lg ">{title}</h3>
+        <h3 className="text-white p-1 font-bold text-lg " onClick={onClick}>{title}</h3>
       </div> 
       <div className="tags-row flex gap-2 mb-2 ml-2 ">
         {postTags.map((tag, index) => (
@@ -60,12 +60,12 @@ const PostCard = ({ errorImg, title, userImg, userName, postTags }) => {
         ))}
       </div>
       <div className="img-card">
-        <img src={errorImg} alt="" />
+        <img src={errorImg} alt="" onClick={onClick}/>
       </div>
       <div className="flex items-center  justify-between  p-2   ">
         <div className="flex items-center gap-4 ">
           <span className="text-white-blue font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-xl gap-2">
-            <div className="flex items-center gap-1 ">
+            <div className="flex items-center gap-1">
               <span className="text-lg" onClick={handleLike}>
                 <VscThumbsup />
               </span>

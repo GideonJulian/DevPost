@@ -5,7 +5,7 @@ import userimg1 from "../assets/images/userimg1.png";
 import userimg2 from "../assets/images/userimg2.png";
 import userimg3 from "../assets/images/userimg3.png";
 
-const PostDetails = [
+const PostData = [
   {
     id: 1,
     erroTitle:
@@ -40,7 +40,7 @@ const PostDetails = [
     language: "css",
   },
   {
-    id: 3,
+    id: 4,
     erroTitle:
       "SQL Query Timeout Error: Query Execution Takes Too Long Due to Missing Indexes.",
     username: "Community picks",
@@ -51,7 +51,7 @@ const PostDetails = [
     language: "css",
   },
   {
-    id: 4,
+    id: 5,
     erroTitle:
       "ensorFlow Model Training Error: Shape Mismatch Between Labels and Predictions",
     username: "Fullstack Developer",
@@ -62,7 +62,7 @@ const PostDetails = [
     language: "javascript",
   },
   {
-    id: 4,
+    id: 6,
     erroTitle: "API request failed",
     username: "Fullstack Developer",
     userProfile: userimg2,
@@ -72,7 +72,7 @@ const PostDetails = [
     language: "javascript",
   },
   {
-    id: 5,
+    id: 7,
     erroTitle:
       "CSS Flexbox Layout Issue: Elements Overlapping or Not Centering Properly in Responsive Design",
     username: "",
@@ -83,4 +83,4 @@ const PostDetails = [
     language: "Python",
   },
 ];
-export default PostDetails;
+export default PostData;

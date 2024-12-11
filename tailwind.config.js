@@ -7,11 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        'main-blue': '#4c49ed',
-        'hover': '#282828',
-        'grey-blue': '#0e1217',
-        'icon-col': '#181f27',
-        'white-blue': '#d7d7e5'
+        'background': '#f6fff8',
+        'sidebar-bg': '#ffffff',
+        'logo-color': '#3c6e71'
       }
     },
   },
