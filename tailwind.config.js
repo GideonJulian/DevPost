@@ -8,8 +8,10 @@ export default {
     extend: {
       colors: {
         'background': '#284b63',
-        'sidebar-bg': '#ffffff',
-        'logo-color': '#3c6e71'
+        'sidebar-bg': '#212121',
+        'logo-color': '#3c6e71',
+        'postCard-b': '#212121cc',
+        'dark': '#212121'
       }
     },
   },

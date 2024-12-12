@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, onClick }) => {
 
   return (
     <div
-      className={`bg-white text-black transition-all duration-300 shadow-lg h-screen absolute md:relative  ${
+      className={`bg-side-bg text-black transition-all duration-300 shadow-lg h-screen absolute md:relative  ${
         isOpen ? "w-72" : "w-0"
       }`}
     >
@@ -44,13 +44,13 @@ const Sidebar = ({ isOpen, onClick }) => {
                 <div
                   key={data.id}
                   onClick={() => handleLanguageClick(language)}
-                  className="p-3 flex items-center gap-6 hover:bg-hover rounded-md cursor-pointer"
+                  className="p-3 flex items-center gap-6 hover:bg-dark rounded-md cursor-pointer"
                 >
                   {" "}
                   <span className="" style={{ color: data.color }}>
                     <i className={`bi ${data.icon}`} />
                   </span>
-                  <span>{data.name}</span>
+                  <span className="text-white font-semibold">{data.name}</span>
                 </div>
               ))}
             </ul>
