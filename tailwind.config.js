@@ -9,7 +9,7 @@ export default {
       colors: {
         'background': '#284b63',
         'sidebar-bg': '#212121',
-        'logo-color': '#3c6e71',
+        'logo-color': '#ff8600',
         'postCard-b': '#212121cc',
         'dark': '#212121'
       }

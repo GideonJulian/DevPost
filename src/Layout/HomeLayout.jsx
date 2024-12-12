@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaBars, FaSearch } from "react-icons/fa";
 import Sidebar from "../components/HomeComponents/Sidebar";
+import logo from "../assets/logo.png";
 const HomeLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  
+
   const toggleSidebar = () => {
     setSidebarOpen((prev) => !prev);
   };
@@ -30,7 +31,7 @@ const HomeLayout = () => {
 
     return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
-  
+
   return (
     <div className="flex h-screen">
       <Sidebar
@@ -39,7 +40,7 @@ const HomeLayout = () => {
         onClick={closeSidebar}
       />
       <div className="main-content flex-1 overflow-auto  transition-all duration-300">
-      <header className="bg-side-bg shadow-lg p-4 py-2 md:py-3 flex justify-between items-center w-full">
+        <header className="bg-sidebar-bg shadow-lg p-4 py-2 md:py-3 flex justify-between items-center w-full">
           <div className="flex items-center gap-2">
             <button
               className="text-2xl text-white block md:hidden"
@@ -47,7 +48,10 @@ const HomeLayout = () => {
             >
               <FaBars />
             </button>
-            <h3 className="text-white">DevPost</h3>
+            <div className="flex md:hidden items-center ">
+              <img src={logo} alt="" />
+              <h3 className="font-bold text-2xl text-logo-color">DevPost</h3>
+            </div>
           </div>
           <div>
             <i className="bi bi-bell text-lg"></i>

@@ -14,16 +14,16 @@ const Sidebar = ({ isOpen, onClick }) => {
 
   return (
     <div
-      className={`bg-side-bg text-black transition-all duration-300 shadow-lg h-screen absolute md:relative  ${
+      className={`bg-sidebar-bg text-black transition-all duration-300 shadow-lg h-screen absolute md:relative  ${
         isOpen ? "w-72" : "w-0"
       }`}
     >
       <div className={`p-4 flex items-center justify-between gap-1 ${isOpen ? "" : "hidden"}`}>
         <div className="flex items-center">
           <img src={logo} alt="" />
-          <h3 className="font-bold text-2xl text-blue-600">DevPost</h3>
+          <h3 className="font-bold text-2xl text-logo-color">DevPost</h3>
         </div>
-        <i class="bi bi-x text-2xl block md:hidden" onClick={onClick}></i>
+        <i class="bi bi-x text-2xl block md:hidden text-white" onClick={onClick}></i>
       </div>
 
       <div className="px-3">

@@ -4,7 +4,14 @@ import { BsChatSquareText } from "react-icons/bs";
 import { VscThumbsdown, VscThumbsup } from "react-icons/vsc";
 import PostDetails from "../../utils/PostData";
 import { LuBookmark } from "react-icons/lu";
-const PostCard = ({ errorImg, title, userImg, userName, postTags, onClick }) => {
+const PostCard = ({
+  errorImg,
+  title,
+  userImg,
+  userName,
+  postTags,
+  onClick,
+}) => {
   const [likes, setLikes] = useState(0);
   const [disLikes, setDisLikes] = useState(0);
 
@@ -34,62 +41,75 @@ const PostCard = ({ errorImg, title, userImg, userName, postTags, onClick }) => 
     }
   };
   return (
-    <div className="post-card cursor-pointer shadow-lg  border-postCard-b rounded-md bg-sidebar-bg transition-shadow hover:shadow-none" >
-      <div className="py-2 px-1">
+    <div className="post-card cursor-pointer shadow-lg border border-gray-700 rounded-lg bg-sidebar-b transition-shadow hover:shadow-none hover:border-gray-600">
+      <div className="py-4 px-3">
+        {/* User Info */}
         <div className="flex items-center">
-          <img src={userImg} alt="" className="w-10 cursor-pointer" />
-          <div className="flex flex-col ml-1">
-            <p className="text-sm text-white font-semibold ml-1 cursor-pointer">
+          <img
+            src={userImg}
+            alt="User"
+            className="w-12 h-12 rounded-full object-cover cursor-pointer"
+          />
+          <div className="flex flex-col ml-3">
+            <p className="text-sm text-white font-semibold cursor-pointer">
               {userName}
             </p>
-            <p className="text-sm text-gray-400 font-semibold ml-1">
-              Frontend dev
+            <p className="text-xs text-gray-400 font-medium">
+              Frontend Developer
             </p>
           </div>
         </div>
-        <h3 className="text-white p-1 font-bold text-lg " onClick={onClick}>{title}</h3>
-      </div> 
-      <div className="tags-row flex gap-2 mb-2 ml-2 ">
+
+        {/* Post Title */}
+        <h3
+          className="text-white font-bold text-lg mt-4 line-clamp-2 cursor-pointer hover:underline"
+          onClick={onClick}
+        >
+          {title}
+        </h3>
+      </div>
+
+      {/* Tags */}
+      <div className="tags-row flex flex-wrap gap-2 px-3 mt-2">
         {postTags.map((tag, index) => (
           <span
             key={index}
-            className="text-white px-2 py-1 rounded-md border border-icon-col text-xs font-normal whitespace-nowrap"
+            className="text-xs text-white bg-dark px-3 py-1 rounded-full border border-gray-600 hover:bg-gray-600"
           >
             #{tag}
           </span>
         ))}
       </div>
-      <div className="img-card p-2">
-        <img src={errorImg} alt="" onClick={onClick}/>
+
+      {/* Post Image */}
+      <div className="img-card mt-4 p-3">
+        <img
+          src={errorImg}
+          alt="Post"
+          className="w-full h-40  rounded-b-lg cursor-pointer"
+          onClick={onClick}
+        />
       </div>
-      <div className="flex items-center  justify-between  p-2   ">
-        <div className="flex items-center gap-4 ">
-          <span className="text-white-blue font-bold bg-blue-500  text-lg flex items-center cursor-pointer px-3 py-2 border-postCard-b rounded-xl gap-2">
-            <div className="flex items-center gap-1 ">
-              <span className="text-lg text-white " onClick={handleLike}>
-                <VscThumbsup />
-              </span>
-              <span className="text-white">{likes}</span>
-            </div>
-            <span className="w-px h-4 bg-white"></span>
-            <div className="flex items-center gap-1 text-white " onClick={handleDisLike}>
-              <span>
-                <VscThumbsdown />
-              </span>
-              <span className="text-white">{disLikes}</span>
-            </div>
-          </span>
-          <span className="text-white  bg-blue-500 font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-xl gap-2">
-            <BsChatSquareText />
-            <span className="w-px h-4 bg-white"></span>
-            <span className="text-white">2</span>
-          </span>
-          <span className="text-white bg-blue-500 font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-lg gap-2">
-            <LuBookmark />
-          </span>
-          <span className="text-white bg-blue-500 font-bold text-lg flex items-center cursor-pointer px-3 py-2 bg-icon-col rounded-lg gap-2">
-            <PiLink />
-          </span>
+      <div className="flex items-center px-3 py-2 gap-1">
+        <div
+          className="bg-dark px-3 py-1 text-white flex items-center gap-2 rounded-md"
+          onClick={handleLike}
+        >
+          <i
+            class="bi bi-hand-thumbs-up text-logo-color "
+            onClick={handleLike}
+          ></i>
+          <span className="text-logo-color">{likes}</span>
+        </div>
+        <div
+          className="bg-dark px-3 py-1 text-white flex items-center gap-2 rounded-md"
+          onClick={handleDisLike}
+        >
+          <i
+            class="bi bi-hand-thumbs-down text-logo-color"
+            onClick={handleDisLike}
+          ></i>
+          <span className="text-logo-color">{disLikes}</span>
         </div>
       </div>
     </div>
