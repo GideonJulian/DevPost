@@ -96,20 +96,20 @@ const PostCard = ({
           onClick={handleLike}
         >
           <i
-            class="bi bi-hand-thumbs-up text-logo-color "
+            class="bi bi-hand-thumbs-up text-light-grey"
             onClick={handleLike}
           ></i>
-          <span className="text-logo-color">{likes}</span>
+          <span className=" text-light-grey ">{likes}</span>
         </div>
         <div
           className="bg-dark px-3 py-1 text-white flex items-center gap-2 rounded-md"
           onClick={handleDisLike}
         >
           <i
-            class="bi bi-hand-thumbs-down text-logo-color"
+            class="bi bi-hand-thumbs-down  text-light-grey"
             onClick={handleDisLike}
           ></i>
-          <span className="text-logo-color">{disLikes}</span>
+          <span className=" text-light-grey">{disLikes}</span>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, onClick }) => {
 
   return (
     <div
-      className={`bg-sidebar-bg text-black transition-all duration-300 shadow-lg h-screen absolute md:relative  ${
+      className={`bg-sidebar-bg text-black transition-all duration-300 z-10  h-screen absolute md:relative ${
         isOpen ? "w-72" : "w-0"
       }`}
     >
@@ -23,7 +23,7 @@ const Sidebar = ({ isOpen, onClick }) => {
           <img src={logo} alt="" />
           <h3 className="font-bold text-2xl text-logo-color">DevPost</h3>
         </div>
-        <i class="bi bi-x text-2xl block md:hidden text-white" onClick={onClick}></i>
+     
       </div>
 
       <div className="px-3">
@@ -36,9 +36,12 @@ const Sidebar = ({ isOpen, onClick }) => {
               placeholder="Search Language"
               onChange={handleSearchlanguage}
             />
+            <div className="px-3 py-1 bg-background rounded-md text-white font-semibold mt-4">
+              Languages 
+            </div>
             <ul
               style={{ overflow: "auto", height: "250px" }}
-              className="mt-4 overflow-y-scroll scrollbar-none"
+              className="mt-4 overflow-y-scroll scrollbar-none ml-6"
             >
               {filteredLanguages.map((data, language) => (
                 <div
@@ -50,7 +53,7 @@ const Sidebar = ({ isOpen, onClick }) => {
                   <span className="" style={{ color: data.color }}>
                     <i className={`bi ${data.icon}`} />
                   </span>
-                  <span className="text-white font-semibold">{data.name}</span>
+                  <span className="text-light-grey font-semibold">{data.name}</span>
                 </div>
               ))}
             </ul>

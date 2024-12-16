@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaBars, FaSearch } from "react-icons/fa";
+import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
 import Sidebar from "../components/HomeComponents/Sidebar";
 import logo from "../assets/logo.png";
 const HomeLayout = () => {
@@ -21,7 +21,7 @@ const HomeLayout = () => {
       if (mediaQuery.matches) {
         setSidebarOpen(false);
       } else {
-        setSidebarOpen(true);
+        setSidebarOpen(false);
       }
     };
 
@@ -42,21 +42,26 @@ const HomeLayout = () => {
       <div className="main-content flex-1 overflow-auto  transition-all duration-300">
         <header className="bg-sidebar-bg shadow-lg p-4 py-2 md:py-3 flex justify-between items-center w-full">
           <div className="flex items-center gap-2">
-            <button
-              className="text-2xl text-white block md:hidden"
-              onClick={toggleSidebar}
-            >
-              <FaBars />
-            </button>
-            <div className="flex md:hidden items-center ">
+            <div className="flex  items-center ">
               <img src={logo} alt="" />
               <h3 className="font-bold text-2xl text-logo-color">DevPost</h3>
             </div>
+            <ul className="hidden md:flex items-center gap-10 ml-10">
+              <li className="text-white font-semibold">Challenges </li>
+              <li className="text-white font-semibold">Blog  </li>
+            </ul>
           </div>
-          <div>
-            <i className="bi bi-bell text-lg"></i>
+          <div className="flex items-center gap-2">
+            <i className="bi bi-bell text-lg text-light-grey  "></i>
+            <button
+              className="text-2xl text-light-grey block md:hidden"
+              onClick={toggleSidebar}
+            >
+            { sidebarOpen ? <FaTimes /> : <FaBars />}
+            </button>
           </div>
         </header>
+       
         <Outlet />
       </div>
     </div>
