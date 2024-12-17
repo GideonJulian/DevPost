@@ -18,12 +18,15 @@ const Sidebar = ({ isOpen, onClick }) => {
         isOpen ? "w-72" : "w-0"
       }`}
     >
-      <div className={`p-4 flex items-center justify-between gap-1 ${isOpen ? "" : "hidden"}`}>
+      <div
+        className={`p-4 flex items-center justify-between gap-1 ${
+          isOpen ? "" : "hidden"
+        }`}
+      >
         <div className="flex items-center">
           <img src={logo} alt="" />
           <h3 className="font-bold text-2xl text-logo-color">DevPost</h3>
         </div>
-     
       </div>
 
       <div className="px-3">
@@ -37,7 +40,7 @@ const Sidebar = ({ isOpen, onClick }) => {
               onChange={handleSearchlanguage}
             />
             <div className="px-3 py-1 bg-background rounded-md text-white font-semibold mt-4">
-              Languages 
+              Languages
             </div>
             <ul
               style={{ overflow: "auto", height: "250px" }}
@@ -53,10 +56,21 @@ const Sidebar = ({ isOpen, onClick }) => {
                   <span className="" style={{ color: data.color }}>
                     <i className={`bi ${data.icon}`} />
                   </span>
-                  <span className="text-light-grey font-semibold">{data.name}</span>
+                  <span className="text-light-grey font-semibold">
+                    {data.name}
+                  </span>
                 </div>
               ))}
             </ul>
+            <div className="mt-7">
+              <button className="px-6 py-3 flex items-center font-semibold bg-logo-color text-white rounded-lg w-full">
+                <i class="bi bi-plus"></i>
+                Add a post
+              </button>
+              <button className="px-6 py-2 mt-2 w-full bg-dark text-white font-semibold font-sans rounded-lg ">
+                Sign in or Create an Account
+              </button>
+            </div>
           </div>
         )}
       </div>

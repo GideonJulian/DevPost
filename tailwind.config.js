@@ -11,7 +11,7 @@ export default {
         'sidebar-bg': '#212121',
         'logo-color': '#ff8600',
         'postCard-b': '#212121cc',
-        'dark': '#212121',
+        'dark': '#292929',
         'light-grey': '#9ca3af'
         
       }
