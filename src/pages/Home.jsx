@@ -72,7 +72,7 @@ const Home = () => {
               placeholder="Search for solutions and errors"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="block px-6 pl-16 bg-gray-100 text-gray-700 font-normal text-base py-3 h-16 rounded-xl w-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="block px-6 pl-12 bg-gray-100 text-gray-700 font-normal text-base py-3 h-16 rounded-xl w-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
             />
             <button className="absolute right-1 md:right-2 top-1/2 transform -translate-y-1/2 md:px-8 md:py-3 px-3 py-2 rounded-full md:rounded-xl font-semibold bg-logo-color text-white   flex items-center justify-center">
               <span className="hidden md:block">Search</span>
