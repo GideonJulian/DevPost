@@ -89,6 +89,8 @@ const Explore = () => {
             <input
               type="text"
               placeholder="Search by tags, user error"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="bg-dark text-gray-100 pr-12 pl-4 py-2 w-full rounded-lg shadow-sm placeholder:text-sm focus:ring-4 focus:ring-logo-color focus:outline-none"
             />
 
