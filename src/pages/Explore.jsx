@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import PostCard from "../components/HomeComponents/PostCard";
 import PostData from "../utils/PostData";
 const Explore = () => {
-
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
   const handleNavigate = (id) => {
@@ -44,7 +43,10 @@ const Explore = () => {
           <span className="text-light-grey">First page</span>
         </div>
         <div className="flex flex-col md:flex-row gap-3 items-center md:items-start">
-          <button onClick={toggleDropdown} className="text-gray-100 capitalize flex justify-between items-center font-semibold h-10 w-full md:w-auto text-sm px-4 py-2 hover:bg-dark rounded-lg gap-2">
+          <button
+            onClick={toggleDropdown}
+            className="text-gray-100 capitalize flex justify-between items-center font-semibold h-10 w-full md:w-auto text-sm px-4 py-2 hover:bg-dark rounded-lg gap-2"
+          >
             <p className="text-light-grey">
               sort: <span className="text-white font-semibold">for you</span>
             </p>
@@ -52,33 +54,38 @@ const Explore = () => {
           </button>
           <div className="relative">
             <div
-                  className={`rounded-lg absolute border-dark border-2 top-full left-10 z-[1000] p-1 bg-dark shadow-xl transition-all duration-500 ease ${
-                    isDropdownOpen ? "visible translate-y-[5px] opacity-100" : "invisible translate-y-0 opacity-0"
-                  }`}
+              className={`rounded-lg absolute border-dark border-2 top-full md:top-7 left-10 md:-left-36 z-[1000] p-1 bg-dark shadow-xl transition-all duration-500 ease ${
+                isDropdownOpen
+                  ? "visible translate-y-[5px] opacity-100"
+                  : "invisible translate-y-0 opacity-0"
+              }`}
             >
               <ul>
                 <li>
                   <a
                     href=""
-                    className="text-gray-300 font-sans hover:text-gray-100 hover:bg-dark no-underline px-5 py-2.5 flex items-center justify-start border-none bg-transparent cursor-pointer w-full text-center text-sm font-semibold m-0 whitespace-nowrap rounded-[6px]"
+                    className="text-gray-300 font-sans hover:text-gray-100 hover:bg-background no-underline px-5 py-2.5 flex items-center justify-start  gap-4 border-none bg-transparent cursor-pointer w-full text-center text-sm font-semibold m-0 whitespace-nowrap rounded-[6px]"
                   >
-                    Favourite
+                    <i class="bi bi-person-circle"></i>
+                    For You
                   </a>
                 </li>
                 <li>
                   <a
                     href=""
-                    className="text-gray-300 font-sans hover:text-gray-100 hover:bg-dark no-underline px-5 py-2.5 flex items-center justify-start border-none bg-transparent cursor-pointer w-full text-center text-sm font-semibold m-0 whitespace-nowrap rounded-[6px]"
+                    className="text-gray-300 font-sans hover:text-gray-100 hover:bg-background no-underline px-5 py-2.5 flex items-center gap-4 justify-start border-none bg-transparent cursor-pointer w-full text-center text-sm font-semibold m-0 whitespace-nowrap rounded-[6px]"
                   >
-                    Favourite
+                    <i class="bi bi-calendar"></i>
+                    Date
                   </a>
                 </li>
                 <li>
                   <a
                     href=""
-                    className="text-gray-300 font-sans hover:text-gray-100 hover:bg-dark no-underline px-5 py-2.5 flex items-center justify-start border-none bg-transparent cursor-pointer w-full text-center text-sm font-semibold m-0 whitespace-nowrap rounded-[6px]"
+                    className="text-gray-300 font-sans hover:text-gray-100 hover:bg-background no-underline px-5 py-2.5 flex items-center justify-start gap-4 border-none bg-transparent cursor-pointer w-full text-center text-sm font-semibold m-0 whitespace-nowrap rounded-[6px]"
                   >
-                    Favourite
+                    <i class="bi bi-bookmark"></i>
+                    Saved
                   </a>
                 </li>
               </ul>
