@@ -19,7 +19,7 @@ const Sidebar = ({ isOpen, onClick }) => {
       }`}
     >
       <div
-        className={`p-4 flex items-center justify-between gap-1 ${
+        className={`p-4 pb-10 flex items-center justify-between gap-1 ${
           isOpen ? "" : "hidden"
         }`}
       >
@@ -62,6 +62,7 @@ const Sidebar = ({ isOpen, onClick }) => {
                 </div>
               ))}
             </ul>
+            {/* Buttons moved to the bottom */}
             <div className="mt-7">
               <button className="px-6 py-3 flex items-center font-semibold bg-logo-color text-white rounded-lg w-full">
                 <i class="bi bi-plus"></i>
