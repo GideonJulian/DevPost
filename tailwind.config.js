@@ -12,7 +12,8 @@ export default {
         'logo-color': '#ff8600',
         'postCard-b': '#212121cc',
         'dark': '#292929',
-        'light-grey': '#9ca3af'
+        'light-grey': '#9ca3af',
+        'high-light': '#2b3035'
         
       }
     },

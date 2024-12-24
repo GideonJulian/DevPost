@@ -10,7 +10,7 @@ const App = () => {
     {
       path: "/",
     
-      element: <HomeLayout /> ,
+      element: <Layout /> ,
       children : [
         {
           index: true ,

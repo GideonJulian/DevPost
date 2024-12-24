@@ -54,7 +54,7 @@ const Explore = () => {
           </button>
           <div className="relative">
             <div
-              className={`rounded-lg absolute border-dark border-2 top-full md:top-7 left-10 md:-left-36 z-[1000] p-1 bg-dark shadow-xl transition-all duration-500 ease ${
+              className={`rounded-lg absolute border-dark border-2 top-full md:top-8 left-10 md:-left-36 z-[1000] p-1 bg-dark shadow-xl transition-all duration-500 ease ${
                 isDropdownOpen
                   ? "visible translate-y-[5px] opacity-100"
                   : "invisible translate-y-0 opacity-0"

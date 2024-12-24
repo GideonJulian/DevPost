@@ -6,6 +6,7 @@ import PostCard from "../components/HomeComponents/PostCard";
 import PostData from "../utils/PostData";
 import { Link, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
@@ -117,6 +118,7 @@ const Home = () => {
           />
         ))}
       </div>
+      
     </div>
   );
 };

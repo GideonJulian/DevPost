@@ -77,6 +77,7 @@ const PostData = [
       "CSS Flexbox Layout Issue: Elements Overlapping or Not Centering Properly in Responsive Design",
     username: "",
     userProfile: userimg3,
+    solutions: [],
     postDate: "Oct 5",
     screenShort: errorImg1,
     postTags: ["Frontend", "CSS"],

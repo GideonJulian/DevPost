@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { PiLink } from "react-icons/pi";
-import { BsChatSquareText } from "react-icons/bs";
-import { VscThumbsdown, VscThumbsup } from "react-icons/vsc";
-import PostDetails from "../../utils/PostData";
-import { LuBookmark } from "react-icons/lu";
+
 const PostCard = ({
+  id,
   errorImg,
   title,
   userImg,

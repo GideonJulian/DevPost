@@ -75,6 +75,7 @@ const HomeLayout = () => {
         </header>
 
         <Outlet />
+      
       </div>
     </div>
   );
