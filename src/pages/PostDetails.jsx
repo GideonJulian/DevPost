@@ -18,7 +18,7 @@ const PostDetails = () => {
     <div className="text-white p-4 md:p-8">
       <div className="flex pb-28">
         <div>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col mb-3 justify-between">
             <button
               onClick={() => navigate(-1)}
               className="font-semibold rounded-lg flex items-center gap-2 px-6 py-3 hover:bg-dark transition-all"
@@ -126,8 +126,8 @@ const PostDetails = () => {
               </h3>
             </div>
             <div className="block md:flex md:gap-3 items-center max-w-full md:flex-row">
-              <div className="bg-gray-100 p-2 flex items-center justify-center rounded-lg md:w-1/3 md:h-[40vh] h-52"></div>
-              <div className="bg-gray-100 p-2 flex items-center justify-center rounded-lg md:w-1/3 md:h-[40vh] h-52"></div>
+              <div className="bg-gray-100 p-2 mt-3 md;mt-0 flex items-center justify-center rounded-lg md:w-1/3 md:h-[40vh] h-52"></div>
+              <div className="bg-gray-100 p-2 mt-3 md;mt-0 flex items-center justify-center rounded-lg md:w-1/3 md:h-[40vh] h-52"></div>
             </div>
           </div>
           <div className="mt-10 ">
