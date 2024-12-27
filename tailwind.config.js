@@ -13,7 +13,10 @@ export default {
         'postCard-b': '#212121cc',
         'dark': '#292929',
         'light-grey': '#9ca3af',
-        'high-light': '#2b3035'
+        'high-light': '#2b3035',
+        'border': '#e5e7eb',
+        'dark-500': '#292929',
+        'dark-300': '#353535'
         
       }
     },
