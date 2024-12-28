@@ -2,7 +2,7 @@ import React from "react";
 
 const SignUpPropt = ({close}) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4 z-10  ">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4 z-10 top-0 bottom-0  ">
     <div className="relative bg-dark-700 max-w-[540px] w-full z-10 rounded-3xl overflow-hidden border border-gray-700 shadow-xl">
       {/* Close Button */}
       <button

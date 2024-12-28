@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SignUpPropt from "../SignUpPropt";
 
 const PostCard = ({
   id,
@@ -8,14 +9,23 @@ const PostCard = ({
   userName,
   postTags,
   onClick,
+  isLoggedIn
 }) => {
   const [likes, setLikes] = useState(0);
   const [disLikes, setDisLikes] = useState(0);
-
+  const [showLoginModal, setShowLoginModal] =  useState(false)
   // Handle Like button click
   const handleLike = () => {
+    if(!isLoggedIn){
+      setShowLoginModal(true)
+      return 
+    }
     // Only increment likes if the post hasn't been disliked
     if (likes === 0 && disLikes === 0) {
+      if (!isLoggedIn) {
+        setShowLoginModal(true);
+        return;
+      }
       setLikes(1);
     } else if (likes === 1) {
       setLikes(0);
@@ -37,6 +47,7 @@ const PostCard = ({
       setDisLikes(1);
     }
   };
+  const closeModal = () => setShowLoginModal(false);
   return (
     <div className="post-card cursor-pointer shadow-lg border border-gray-700 rounded-lg bg-sidebar-b transition-shadow hover:shadow-none hover:border-gray-600">
       <div className="py-4 px-3">
@@ -109,6 +120,11 @@ const PostCard = ({
           <span className=" text-light-grey">{disLikes}</span>
         </div>
       </div>
+      {
+        showLoginModal && (
+          <SignUpPropt close={closeModal}/> 
+        )
+      }
     </div>
   );
 };
