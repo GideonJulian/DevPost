@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import PostData from "../utils/PostData";
+import SignUpPropt from "../components/SignUpPropt";
 
 const PostDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [isLogin, setisLogin] = useState(true)
+  const [isOpen, setisOpen] = useState(true)
   const post = PostData.find((item) => item.id === parseInt(id, 10));
   if (!post) {
     return (
@@ -13,6 +16,12 @@ const PostDetails = () => {
         <h1>Post not Found</h1>
       </div>
     );
+  }
+  const handleSendComment  = () => { 
+    setisOpen(!isOpen)
+  }
+  const closeModal = () => {
+    setisOpen(!isOpen)
   }
   return (
     <div className="text-white p-4 md:p-8">
@@ -64,7 +73,7 @@ const PostDetails = () => {
               </h3>
 
               {/* Solution Section */}
-              <div className="h-64 overflow-auto bg-gray-800 rounded-lg shadow-md p-4 space-y-4">
+              <div className="h-64 overflow-auto bg-dark rounded-lg shadow-md p-4 space-y-4">
                 {/* Solution Block */}
                 {[...Array(3)].map((_, index) => (
                   <div>
@@ -80,7 +89,7 @@ const PostDetails = () => {
                           jsx
                         </span>
                         <span className="text-gray-300 text-sm cursor-pointer flex items-center gap-1">
-                          <i className="bi bi-copy"></i> Copy Code
+                          <i  className="bi bi-copy"></i> Copy Code
                         </span>
                       </div>
 
@@ -152,7 +161,8 @@ const PostDetails = () => {
                 />
                 <button
                   type="button"
-                  className=" relative z-30 px-8 py-3 h-12 font-sans  disabled:cursor-auto border-none cursor-pointer bg-blue-800 text-offwhite font-semibold rounded-lg transition disabled:bg-dark-400"
+                  onClick={handleSendComment}
+                  className=" relative z-30 px-8 py-3 h-12 font-sans  disabled:cursor-auto border-none cursor-pointer bg-logo-color text-offwhite font-semibold rounded-lg transition disabled:bg-dark-400"
                 >
                   Send
                 </button>
@@ -161,6 +171,11 @@ const PostDetails = () => {
           </div>
         </div>
       </div>
+    {
+      !isOpen  && (
+        <SignUpPropt close={closeModal}/> 
+      )
+    }
     </div>
   );
 };
